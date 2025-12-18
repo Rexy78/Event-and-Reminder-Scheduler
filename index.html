@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login / Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 50px 40px;
+      width: 420px; 
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      animation: slideIn 0.5s ease;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      margin-bottom: 18px;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.85);
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      background: #fff;
+      box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+    }
+
+    button {
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+      transform: translateY(-2px);
+    }
+
+    p {
+      margin-top: 12px;
+      font-size: 15px;
+      color: #eee;
+    }
+
+    a {
+      color: #ffd369;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #message {
+      margin-top: 18px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #ffd369;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="formTitle">Login</h2>
+    <form id="loginForm" class="active">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p>Don’t have an account? <a id="showRegister">Register here</a></p>
+    </form>
+
+    <form id="registerForm">
+      <input type="text" id="regUsername" placeholder="Username" required>
+      <input type="email" id="regEmail" placeholder="Email" required>
+      <input type="password" id="regPassword" placeholder="Password" required>
+      <button type="submit">Register</button>
+      <p>Already have an account? <a id="showLogin">Login here</a></p>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

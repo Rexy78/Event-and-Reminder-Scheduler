@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Reminders</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #5a74d6, #6ad3cc);
+      margin: 0;
+      padding: 40px 20px;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 35px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.25);
+    }
+
+    /* EVENT LIST */
+    .event-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    /* EVENT CARDS */
+    .event-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 22px;
+      border-radius: 18px;
+      width: 320px;
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(6px);
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    .event-card h3 {
+      color: #34495e;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 6px;
+    }
+
+    .event-card p {
+      color: #444;
+      font-size: 0.95rem;
+      margin: 6px 0;
+    }
+
+    textarea {
+      width: 100%;
+      height: 60px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 0.9rem;
+      outline: none;
+      resize: none;
+      margin-top: 8px;
+    }
+
+    input[type="datetime-local"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .event-card button {
+      width: 100%;
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 15px;
+      transition: 0.3s ease;
+      font-weight: 500;
+    }
+
+    .event-card button:hover {
+      background: #2179b5;
+    }
+
+    /* TEST BUTTON */
+    .test-btn {
+      display: block;
+      margin: 40px auto 0;
+      background: #0cbc64;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s ease;
+      font-weight: 600;
+    }
+
+    .test-btn:hover {
+      background: #0a9e54;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h2>Event Reminder Dashboard</h2>
+
+  <div class="event-container" id="eventList"></div>
+
+  <button class="test-btn" onclick="triggerBrowserNotification('This is a test reminder!')">
+    🔔 Test Notification
+  </button>
+
+  <script src="reminder.js"></script>
+
+</body>
+</html>
